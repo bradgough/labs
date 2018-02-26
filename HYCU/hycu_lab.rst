@@ -65,7 +65,7 @@ Prerequisites: HYCU VM is created, and powered ON.
 - Search domain = <Part of pre-requisites>	
 - Fill and confirm with “Enter“ button press.
 
-https://s3.us-east-2.amazonaws.com/s3.nutanixtechsummit.com/hycu/images/image5.png
+.. figure:: https://s3.us-east-2.amazonaws.com/s3.nutanixtechsummit.com/hycu/images/image5.png
 	
  .. Note :: You can switch between lines by pressing the “Tab“ button.
 	
