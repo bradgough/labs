@@ -63,7 +63,7 @@ Prerequisites: HYCU VM is created, and powered ON.
 - Default gateway = <Part of pre-requisites>	
 - DNS server = <Part of pre-requisites>	
 - Search domain = <Part of pre-requisites>	
-- Fill and confirm with “Enter“ button press.
+- Fill and confirm with “Enter“ button press. 
 
 .. figure:: https://s3.us-east-2.amazonaws.com/s3.nutanixtechsummit.com/hycu/images/image5.png
 	
@@ -115,7 +115,9 @@ Prerequisites: HYCU successfully installed, and running.
 EXERCISE 4 - ADD TARGET
 +++++++++++++++++++++++
 
-Objective: Add target to store backups and restore points.
+Objective: Add target to store backups and restore points. 
+
+ .. note:: This will cover all types of target's, you will only need to create the necessary type.
 
 Prerequisites:	HYCU VM Configured and Nutanix Cluster Added.
 
@@ -125,11 +127,11 @@ Prerequisites:	HYCU VM Configured and Nutanix Cluster Added.
 	
 3. Click “+ New" button in the top right corner. 
 
-.. figure:: https://s3.us-east-2.amazonaws.com/s3.nutanixtechsummit.com/hycu/images/image12.png
-
 - Target type: NFS
+
+.. figure:: https://s3.us-east-2.amazonaws.com/s3.nutanixtechsummit.com/hycu/images/image12.png
 	
- .. Note ::Even though Nutanix storage container's can be used as an NFS target, HYCU recommend's using Volume Groups as 	an iSCSI target.
+ .. Note ::Even though Nutanix storage container's can be used as an NFS target, HYCU recommend's using Volume Groups as 	an ISCSI target.
  
 4. Create a new container from Prism with at least 100GB of storage. 
 
@@ -141,17 +143,17 @@ Prerequisites:	HYCU VM Configured and Nutanix Cluster Added.
 	
 6. Make sure target was successfully added. 
 
-.. figure:: https://s3.us-east-2.amazonaws.com/s3.nutanixtechsummit.com/hycu/images/image15.png
-
 - Target type: SMB
+
+.. figure:: https://s3.us-east-2.amazonaws.com/s3.nutanixtechsummit.com/hycu/images/image15.png
 
 7. Setup a shared directory on one of the Windows machines.
 	
 8. Expose that shared directory as a HYCU SMB target. 
 
-.. figure:: https://s3.us-east-2.amazonaws.com/s3.nutanixtechsummit.com/hycu/images/image16.png
-
 - Target type: iSCSI
+
+.. figure:: https://s3.us-east-2.amazonaws.com/s3.nutanixtechsummit.com/hycu/images/image16.png
 
  .. Note :: Nutanix volume group's can be used as an iSCSI target.
  
