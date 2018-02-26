@@ -26,12 +26,12 @@ Prerequisites:	HYCU VM available in Prism Image Configurator.
 
 1. Start by adding a new virtual machine in Prism by clicking “Create VM”.	
   
-2. Configure VM name and compute details. (Picture 1)	
+2. Configure VM name and compute details. 	
   
   - 2x vCPUs	
   - 2x CORES	
   - 4x GB Memory	
-  - Attach HYCU disk image to the new VM (Picture 2 & 3)	
+  - Attach HYCU disk image to the new VM 	
   - Type = DISK	
   - Operation = Clone from Image service	
   - BUS Type = SCSI	
@@ -69,7 +69,7 @@ Prerequisites: HYCU VM is created, and powered ON.
 	
 4. Once configured, and confirmed, wait a minute for the console to save its settings, and initialize completely.
 	
- .. note :: Write down the URL you will use to access the HYCU UI**. ( Picture 7 )	
+ .. note :: Write down the URL you will use to access the HYCU UI**. 	
 .. figure:: https://s3.us-east-2.amazonaws.com/s3.nutanixtechsummit.com/hycu/images/image7.png
 
 EXERCISE 3 - ADD CLUSTER
@@ -80,7 +80,7 @@ Objective:	Add the Nutanix Cluster to HYCU.
 Prerequisites: HYCU successfully installed, and running.
 
 1. Login to the HYCU Web Interface by navigating to https://your_configured_ip_address:8443
-   And you will be greeted with the Hycu login screen. ( Picture 8 )
+   And you will be greeted with the Hycu login screen. 
    
    .. figure:: https://s3.us-east-2.amazonaws.com/s3.nutanixtechsummit.com/hycu/images/image8.png	
 
@@ -91,11 +91,11 @@ Prerequisites: HYCU successfully installed, and running.
 	
  .. Note :: It is recommended to change these as soon as you log in for the first time.
  
-3. After your first successful login, start by adding the Nutanix cluster to HYCU. From the top right corner, 	 		Administration icon, select Add Nutanix Clusters. (Picture 9)
+3. After your first successful login, start by adding the Nutanix cluster to HYCU. From the top right corner, 	 		Administration icon, select Add Nutanix Clusters.
 
 .. figure:: https://s3.us-east-2.amazonaws.com/s3.nutanixtechsummit.com/hycu/images/image9.png
 	
-4. Fill out the fields in the “Add Nutanix Cluster” form, and confirm with “Save” button. (Picture 10)
+4. Fill out the fields in the “Add Nutanix Cluster” form, and confirm with “Save” button. 
 
 .. figure:: https://s3.us-east-2.amazonaws.com/s3.nutanixtechsummit.com/hycu/images/image10.png
 
@@ -103,7 +103,7 @@ Prerequisites: HYCU successfully installed, and running.
 - User = <collected during pre-requisites>	
 - Password = <collected during pre-requisites>
 
-5. Upon successful entry, you should see your cluster added. (Picture 11)
+5. Upon successful entry, you should see your cluster added. 
 
 .. figure:: https://s3.us-east-2.amazonaws.com/s3.nutanixtechsummit.com/hycu/images/image11.png
 
@@ -121,7 +121,7 @@ Prerequisites:	HYCU VM Configured and Nutanix Cluster Added.
 	
 2. Select “Targets” from the left-hand pane.
 	
-3. Click “+ New" button in the top right corner. (Picture 12)
+3. Click “+ New" button in the top right corner. 
 
 .. figure:: https://s3.us-east-2.amazonaws.com/s3.nutanixtechsummit.com/hycu/images/image12.png
 
@@ -129,15 +129,15 @@ Prerequisites:	HYCU VM Configured and Nutanix Cluster Added.
 	
  .. Note ::Even though Nutanix storage container's can be used as an NFS target, HYCU recommend's using Volume Groups as 	an iSCSI target.
  
-4. Create a new container from Prism with at least 100GB of storage. (Picture 13)
+4. Create a new container from Prism with at least 100GB of storage. 
 
 .. figure:: https://s3.us-east-2.amazonaws.com/s3.nutanixtechsummit.com/hycu/images/image13.png
 	
-5. Expose that container as a HYCU NFS target. (Picture 14)
+5. Expose that container as a HYCU NFS target. 
 
 .. figure:: https://s3.us-east-2.amazonaws.com/s3.nutanixtechsummit.com/hycu/images/image14.png
 	
-6. Make sure target was successfully added. (Picture 15)
+6. Make sure target was successfully added. 
 
 .. figure:: https://s3.us-east-2.amazonaws.com/s3.nutanixtechsummit.com/hycu/images/image15.png
 
@@ -145,7 +145,7 @@ Prerequisites:	HYCU VM Configured and Nutanix Cluster Added.
 
 7. Setup a shared directory on one of the Windows machines.
 	
-8. Expose that shared directory as a HYCU SMB target. (Picture 16).
+8. Expose that shared directory as a HYCU SMB target. 
 
 .. figure:: https://s3.us-east-2.amazonaws.com/s3.nutanixtechsummit.com/hycu/images/image16.png
 
@@ -153,15 +153,15 @@ Prerequisites:	HYCU VM Configured and Nutanix Cluster Added.
 
  .. Note :: Nutanix volume group's can be used as an iSCSI target.
  
-9. Create a new Nutanix volume group from Prism with at least 100GB of storage. (Picture 17).
+9. Create a new Nutanix volume group from Prism with at least 100GB of storage. 
 
 .. figure:: https://s3.us-east-2.amazonaws.com/s3.nutanixtechsummit.com/hycu/images/image17.png
 	
-10. Register the new Client to your Volume Group by using HYCU IP address or ISCSI Initiator Name*. (Picture 18)
+10. Register the new Client to your Volume Group by using HYCU IP address or ISCSI Initiator Name*. 
 
 .. figure:: https://s3.us-east-2.amazonaws.com/s3.nutanixtechsummit.com/hycu/images/image18.png
 	
-11. Expose that Volume Group as HYCU iSCSI target (Picture 19). IQN of the iSCSI storage device is located in Nutanix 		Volume Group properties - Target IQN Prefix. (Picture 20)
+11. Expose that Volume Group as HYCU iSCSI target. IQN of the iSCSI storage device is located in Nutanix 		Volume Group properties - Target IQN Prefix.
 
 .. figure:: https://s3.us-east-2.amazonaws.com/s3.nutanixtechsummit.com/hycu/images/image19.png
 .. figure:: https://s3.us-east-2.amazonaws.com/s3.nutanixtechsummit.com/hycu/images/image20.png
@@ -195,20 +195,20 @@ Prerequisites:	HYCU VM Configured, Nutanix Cluster Added, Backup Target Added.
 - VM backup	
 - Application Aware backup
 
-5. This time, we will focus on a full VM backup. Highlight the VM machine you want to backup - As shown in (Picture 21), click on “Polices” on the top right, and select one of the polices. (Picture 22).
+5. This time, we will focus on a full VM backup. Highlight the VM machine you want to backup - As shown in the below picture, click on “Polices” on the top right, and select one of the polices. 
 
 .. figure:: https://s3.us-east-2.amazonaws.com/s3.nutanixtechsummit.com/hycu/images/image21.png
 .. figure:: https://s3.us-east-2.amazonaws.com/s3.nutanixtechsummit.com/hycu/images/image22.png
 	
-6. As soon as the policy gets assigned, your first full backup will start, and you can track its status by clicking on 		“Jobs" in the main left-hand pane. (Picture 23)
+6. As soon as the policy gets assigned, your first full backup will start, and you can track its status by clicking on 		“Jobs" in the main left-hand pane. 
 
 .. figure:: https://s3.us-east-2.amazonaws.com/s3.nutanixtechsummit.com/hycu/images/image23.png
 	
-7. Once backup completes, if you want to manually trigger an incremental backup, you can start it by clicking on the 		“Backup” button on the top. (Picture 24)
+7. Once backup completes, if you want to manually trigger an incremental backup, you can start it by clicking on the 		“Backup” button on the top. 
 
 .. figure:: https://s3.us-east-2.amazonaws.com/s3.nutanixtechsummit.com/hycu/images/image24.png
 	
-8. By hovering your mouse over the backup status column, you can see which type of backup was done, and all of the 		important details of that backup. (Picture 25)
+8. By hovering your mouse over the backup status column, you can see which type of backup was done, and all of the 		important details of that backup. 
 
 .. figure:: https://s3.us-east-2.amazonaws.com/s3.nutanixtechsummit.com/hycu/images/image25.png
 
@@ -230,7 +230,7 @@ Prerequisites:	HYCU VM Configured, Nutanix Cluster Added, Backup Target Added an
 	
 4. Highlight the VM you would like to restore from. Now all of the restore points related to that VM will appear. Select the restore point you desire.
 	
-5. Now click on the “Restore VM” on the menu that appears above.  (Picture 26)
+5. Now click on the “Restore VM” on the menu that appears above.  
 
 .. figure:: https://s3.us-east-2.amazonaws.com/s3.nutanixtechsummit.com/hycu/images/image26.png
 	
@@ -266,7 +266,7 @@ Prerequisites:	HYCU VM Configured, Nutanix Cluster Added, Backup Target Added, a
 	
 5. To restore files back to the original VM you will need to provide VM credentials. 
 	
-6. To define and assign credentials for the VM click on “Credentials" in the top right corner. Configure administrator credentials. (Picture 27)	
+6. To define and assign credentials for the VM click on “Credentials" in the top right corner. Configure administrator credentials. 	
 
 .. figure:: https://s3.us-east-2.amazonaws.com/s3.nutanixtechsummit.com/hycu/images/image27.png	
 
@@ -279,11 +279,11 @@ Prerequisites:	HYCU VM Configured, Nutanix Cluster Added, Backup Target Added, a
 	
 8. Select the VM again, and then select the latest restore point, and click on “Restore Files”. By default, you can recover files to any shared location.
 
-9. Click on the “Restore files” again. Simply check the boxes next to folders/files needed for restore, and confirm with 	  next. (Picture 28)
+9. Click on the “Restore files” again. Simply check the boxes next to folders/files needed for restore, and confirm with 	  next. 
 
 .. figure:: https://s3.us-east-2.amazonaws.com/s3.nutanixtechsummit.com/hycu/images/image28.png	
 
-10. Select restore to Original or Alternate location, fill out required information (picture 29) and restore the files.
+10. Select restore to Original or Alternate location, fill out required information and restore the files.
 	
 .. figure:: https://s3.us-east-2.amazonaws.com/s3.nutanixtechsummit.com/hycu/images/image29.png
 
@@ -298,13 +298,13 @@ Prerequisites: SQL Server with a single SQL instance, Credentials for VM access,
 
  .. Note ::HYCU will be able to auto discover applications running inside a VM, and offer application level backup / restore. With this application awareness capability, you can now focus on protecting your applications. Follow the below steps in order to perform an application aware backup / restore.
  
-1. Select Virtual Machines in the main left menu. (Picture 30)
+1. Select Virtual Machines in the main left menu. 
 
 .. figure:: https://s3.us-east-2.amazonaws.com/s3.nutanixtechsummit.com/hycu/images/image30.png	
 	
 2. Click on Credentials on the right-hand side.
 	
-3. Create new credential group, make sure to use credentials with VM & APP access. (Picture 31)
+3. Create new credential group, make sure to use credentials with VM & APP access. 
 
 .. figure:: https://s3.us-east-2.amazonaws.com/s3.nutanixtechsummit.com/hycu/images/image31.png	
 	
@@ -316,7 +316,7 @@ Prerequisites: SQL Server with a single SQL instance, Credentials for VM access,
 	
 7. Once discovery has completed click on Applications in the main left side menu.
 	
-8. Assign your desired Policy to discovered SQL application, and the backup process will start within 5 minutes. (Picture 32)
+8. Assign your desired Policy to discovered SQL application, and the backup process will start within 5 minutes.
 
 .. figure:: https://s3.us-east-2.amazonaws.com/s3.nutanixtechsummit.com/hycu/images/image32.png	
 	
@@ -326,7 +326,7 @@ Prerequisites: SQL Server with a single SQL instance, Credentials for VM access,
 	
 11. You can select any of these restore point's and select the “Restore” icon to perform a granular recovery of the database.
 	
-12. Select either individual database, multiple databases, or full SQL instance. (Picture33)
+12. Select either individual database, multiple databases, or full SQL instance. 
 
 .. figure:: https://s3.us-east-2.amazonaws.com/s3.nutanixtechsummit.com/hycu/images/image33.png
 
