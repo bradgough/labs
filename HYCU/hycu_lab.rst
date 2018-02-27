@@ -4,12 +4,12 @@ Comtrade HYCU
 
 Overview
 ++++++++
-Welcome to the Nutanix lab for HYCU!  In this lab you will go through installing HYCU, configuring HYCU, backing up vm's, and restoring vm's.  The goal of this lab is for you to understand how HYCU works in order to demo and pitch this with your clients.
+Welcome to the Nutanix lab for HYCU!  In this lab you will go through installing HYCU, configuring HYCU, backing up, and restoring different datasets.  The goal of this lab is for you to have a better understanding of how HYCU works in order to better pitch and demo this with your clients.
 
 Pre-requisites
 ++++++++++++++
 - Nutanix cluster running AHV.
-- Prism Cluster URL, id with admin privileges and password.
+- Prism Cluster URL, login with admin privileges and password.
 - Image of HYCU uploaded to Prism Image configuration.
 - Windows and/or Linux VMs.
 - Administrator Login credentials for your Windows VMs.
@@ -20,13 +20,13 @@ Pre-requisites
 EXERCISE 1 - INITIAL DEPLOYMENT
 +++++++++++++++++++++++++++++++
 
-Objective:	Create HYCU backup controller VM.
+Objective: Create a HYCU backup controller VM.
 
 Prerequisites:	HYCU VM available in Prism Image Configurator. 
 
 1. Start by adding a new virtual machine in Prism by clicking “Create VM”.	
   
-2. Configure VM name and compute details. 	
+2. Configure the VM, name and compute details. 	
   
   - 2x vCPUs	
   - 2x CORES	
@@ -47,7 +47,7 @@ Prerequisites:	HYCU VM available in Prism Image Configurator.
 EXERCISE 2 - NETWORK AND CONTROLLER SETUP
 +++++++++++++++++++++++++++++++++++++++++
 
-Objective:	Network setup for HYCU backup controller.
+Objective: Network setup for HYCU backup controller.
   
 Prerequisites: HYCU VM is created, and powered ON.
 
@@ -72,12 +72,14 @@ Prerequisites: HYCU VM is created, and powered ON.
 4. Once configured, and confirmed, wait a minute for the console to save its settings, and initialize completely.
 	
  .. note :: Write down the URL you will use to access the HYCU UI**. 	
+ 
 .. figure:: https://s3.us-east-2.amazonaws.com/s3.nutanixtechsummit.com/hycu/images/image7.png
+
 
 EXERCISE 3 - ADD CLUSTER
 ++++++++++++++++++++++++
   
-Objective:	Add the Nutanix Cluster to HYCU.
+Objective: Add the Nutanix Cluster to HYCU.
   
 Prerequisites: HYCU successfully installed, and running.
 
@@ -115,13 +117,13 @@ Prerequisites: HYCU successfully installed, and running.
 EXERCISE 4 - ADD TARGET
 +++++++++++++++++++++++
 
-Objective: Add target to store backups and restore points. 
+Objective: Add a target to store backups and restore points. 
 
  .. note:: This will cover all types of target's, you will only need to create the necessary type.
 
 Prerequisites:	HYCU VM Configured and Nutanix Cluster Added.
 
-1. Login to HYCU UI.
+1. Login to the HYCU UI.
 	
 2. Select “Targets” from the left-hand pane.
 	
@@ -137,11 +139,11 @@ Prerequisites:	HYCU VM Configured and Nutanix Cluster Added.
 
 .. figure:: https://s3.us-east-2.amazonaws.com/s3.nutanixtechsummit.com/hycu/images/image13.png
 	
-5. Expose that container as a HYCU NFS target. 
+5. Expose the container as a HYCU NFS target. 
 
 .. figure:: https://s3.us-east-2.amazonaws.com/s3.nutanixtechsummit.com/hycu/images/image14.png
 	
-6. Make sure target was successfully added. 
+6. Make sure that the target was successfully added. 
 
 - Target type: SMB
 
@@ -161,18 +163,18 @@ Prerequisites:	HYCU VM Configured and Nutanix Cluster Added.
 
 .. figure:: https://s3.us-east-2.amazonaws.com/s3.nutanixtechsummit.com/hycu/images/image17.png
 	
-10. Register the new Client to your Volume Group by using HYCU IP address or ISCSI Initiator Name*. 
+10. Register the new Client to your Volume Group by using HYCU IP address or ISCSI Initiator Name. 
 
 .. figure:: https://s3.us-east-2.amazonaws.com/s3.nutanixtechsummit.com/hycu/images/image18.png
 	
-11. Expose that Volume Group as HYCU iSCSI target. IQN of the iSCSI storage device is located in Nutanix 		Volume Group properties - Target IQN Prefix.
+11. Expose the Volume Group as a HYCU iSCSI target. IQN of the iSCSI storage device is located in Nutanix 		Volume Group properties - Target IQN Prefix.
 
 .. figure:: https://s3.us-east-2.amazonaws.com/s3.nutanixtechsummit.com/hycu/images/image19.png
 .. figure:: https://s3.us-east-2.amazonaws.com/s3.nutanixtechsummit.com/hycu/images/image20.png
 
- .. Note :: To get iSCSI Initiator Name, in HYCU from the top right corner, Administration icon, select iSCSI Initiator.
+ .. Note :: To get the ISCSI Initiator Name, in HYCU from the top right corner, Administration icon, select iSCSI Initiator.
   
-  .. Note :: The target will be used to store backups made by HYCU, and it will also be a place restores will be carried out from. Supported targets are:
+  .. Note :: The target will be used to store backups made by HYCU, and it will also be where restores will be carried out from. Supported targets are:
   
 	- SMB	
 	- NFS	
@@ -184,7 +186,7 @@ Prerequisites:	HYCU VM Configured and Nutanix Cluster Added.
 EXERCISE 5 - VM BACKUP
 ++++++++++++++++++++++
 
-Objective:	Complete a few backup procedures.
+Objective: To perform a successful VM backup.
 
 Prerequisites:	HYCU VM Configured, Nutanix Cluster Added, Backup Target Added.
 
@@ -192,14 +194,14 @@ Prerequisites:	HYCU VM Configured, Nutanix Cluster Added, Backup Target Added.
 	
 2. Click on “Virtual Machines“ on the left-hand pane.
 	
-3. HYCU synchronizes machines on regular intervals, but you can also trigger synchronization manually by clicking the 	    	    Synchronize button in the top left corner.
+3. HYCU synchronizes machines at regular intervals, but you can also trigger synchronization manually by clicking the 	    	    Synchronize button in the top left corner.
 
 4. Two types of backups are available.
 	
 - VM backup	
 - Application Aware backup
 
-5. This time, we will focus on a full VM backup. Highlight the VM machine you want to backup - As shown in the below picture, click on “Polices” on the top right, and select one of the polices. 
+5. For this exercise, we will focus on a full VM backup. Highlight the VM machine you want to backup - As shown in the below picture, click on “Policies” in the top right, and select one of the policies. 
 
 .. figure:: https://s3.us-east-2.amazonaws.com/s3.nutanixtechsummit.com/hycu/images/image21.png
 .. figure:: https://s3.us-east-2.amazonaws.com/s3.nutanixtechsummit.com/hycu/images/image22.png
@@ -208,7 +210,7 @@ Prerequisites:	HYCU VM Configured, Nutanix Cluster Added, Backup Target Added.
 
 .. figure:: https://s3.us-east-2.amazonaws.com/s3.nutanixtechsummit.com/hycu/images/image23.png
 	
-7. Once backup completes, if you want to manually trigger an incremental backup, you can start it by clicking on the 		“Backup” button on the top. 
+7. Once the backup completes, if you would like to manually trigger an incremental backup, you can start it by clicking on the 		“Backup” button on the top. 
 
 .. figure:: https://s3.us-east-2.amazonaws.com/s3.nutanixtechsummit.com/hycu/images/image24.png
 	
@@ -216,13 +218,14 @@ Prerequisites:	HYCU VM Configured, Nutanix Cluster Added, Backup Target Added.
 
 .. figure:: https://s3.us-east-2.amazonaws.com/s3.nutanixtechsummit.com/hycu/images/image25.png
 
+
 	**Congratulations, you've just completed your first HYCU backup!!!**
 
 
 EXERCISE 6 - VM RESTORE
 +++++++++++++++++++++++
 
-Objective:	Restore VM and/or file system. 
+Objective: Restore VM and/or file system. 
 
 Prerequisites:	HYCU VM Configured, Nutanix Cluster Added, Backup Target Added and you have completed at least one full backup.
 
@@ -230,23 +233,23 @@ Prerequisites:	HYCU VM Configured, Nutanix Cluster Added, Backup Target Added an
 	
 2. Click on “Virtual Machines” in the left hand pane.
 	
-3. Find the VM you need to restore either by scrolling through available choices, or by filtering it by name (top right     	  corner, just below the Owner button).
+3. Find the VM you need to restore either by scrolling through the available choices, or by filtering it by name (top right     	  corner, just below the Owner button).
 	
 4. Highlight the VM you would like to restore from. Now all of the restore points related to that VM will appear. Select the restore point you desire.
 	
-5. Now click on the “Restore VM” on the menu that appears above.  
+5. Now click on the “Restore VM” in the menu that appears above.  
 
 .. figure:: https://s3.us-east-2.amazonaws.com/s3.nutanixtechsummit.com/hycu/images/image26.png
 	
-6. You can restore the VM to the original location with same name as the original VM, or to a new location or with a new 		name.
+6. You can restore the VM to the original location with the same name as the original VM, to a new location, or with a new 		name.
 	
-7. Let’s restore it to a new container. Deselect “Restore with original settings” option.
+7. Let’s restore it to a new container. Deselect the “Restore with original settings” option.
 	
 8. Select a container where the VM will be restored to.
 	
-9. Specify new VM name.
+9. Specify a new VM name.
 	
-10. Deselect “POWER VIRTUAL MACHINE ON” option and trigger Restore.
+10. Deselect “POWER VIRTUAL MACHINE ON” option and trigger a Restore.
 	
 	**Congratulation's your restore is now underway!!  Make sure to monitor the progress.**
 
@@ -254,17 +257,17 @@ Prerequisites:	HYCU VM Configured, Nutanix Cluster Added, Backup Target Added an
 EXERCISE 7 - FILE / FOLDER LEVEL RESTORE
 ++++++++++++++++++++++++++++++++++++++++
 
-Objective:	Perform a single file restore .
+Objective: Perform a single file restore.
 
 Prerequisites:	HYCU VM Configured, Nutanix Cluster Added, Backup Target Added, and you have completed at least one full backup.
 
- .. Note :: Restore's are available even from the file system level, and it’s extremely useful when you have to restore only a few files/folders from a VM. That way, there is no need to restore the entire VM, but rather just those files/folders. Follow the below steps in order to perform a granular restore.
+ .. Note :: Restore's are available even from the file system level, and it’s extremely useful when you have to restore only a few files/folders from a VM. That way, there is no need to restore the entire VM, but rather just those files/folders. Follow the below steps in order to perform a granular single file restore.
  
-1. Login to HYCU UI.
+1. Login to the HYCU UI.
 	
 2. Click on “Virtual Machines” in the left hand pane.
 	
-3. Find the VM you want to restore the file or folder from by scrolling through available choices, or by filtering it by     	  name (top right corner, just below the Owner button).
+3. Find the VM you would like to restore the file or folder from by scrolling through available choices, or by filtering it by     	  name (top right corner, just below the Owner button).
 	
 4. Select the VM.
 	
@@ -277,17 +280,17 @@ Prerequisites:	HYCU VM Configured, Nutanix Cluster Added, Backup Target Added, a
 - Username = <collected as part of pre-requisites>	
 - Password = <collected as part of pre-requisites>
 	
-7. Select your desired Virtual machine, click “Credentials” and assign created credential group to the Virtual machine.
+7. Select your desired Virtual machine, click “Credentials” and assign the created credential group to the Virtual machine.
 	
  .. Note :: Notice VM discovery will be marked green if credentials were properly verified and HYCU has access to the 		system.
 	
 8. Select the VM again, and then select the latest restore point, and click on “Restore Files”. By default, you can recover files to any shared location.
 
-9. Click on the “Restore files” again. Simply check the boxes next to folders/files needed for restore, and confirm with 	  next. 
+9. Click on the “Restore files” button again. Simply check the boxes next to folders/files needed for restore, and confirm with 	  next. 
 
 .. figure:: https://s3.us-east-2.amazonaws.com/s3.nutanixtechsummit.com/hycu/images/image28.png	
 
-10. Select restore to Original or Alternate location, fill out required information and restore the files.
+10. Select restore to Original or Alternate location, fill out the required information and restore the files.
 	
 .. figure:: https://s3.us-east-2.amazonaws.com/s3.nutanixtechsummit.com/hycu/images/image29.png
 
@@ -296,7 +299,7 @@ Prerequisites:	HYCU VM Configured, Nutanix Cluster Added, Backup Target Added, a
 EXERCISE 8 – APPLICATION DISCOVERY & BACKUP / RESTORE 
 +++++++++++++++++++++++++++++++++++++++++++++++++++++
   
-Objective: Perform auto discovery of a SQL Server database and perform backup & restore.
+Objective: Perform auto discovery of a SQL Server database and perform a backup & restore.
   
 Prerequisites: SQL Server with a single SQL instance, Credentials for VM access, and Credentials for SQL database access (sysadmin permission).
 
@@ -320,7 +323,7 @@ Prerequisites: SQL Server with a single SQL instance, Credentials for VM access,
 	
 7. Once discovery has completed click on Applications in the main left side menu.
 	
-8. Assign your desired Policy to discovered SQL application, and the backup process will start within 5 minutes.
+8. Assign your desired Policy to the discovered SQL application, and the backup process will start within 5 minutes.
 
 .. figure:: https://s3.us-east-2.amazonaws.com/s3.nutanixtechsummit.com/hycu/images/image32.png	
 	
@@ -335,7 +338,7 @@ Prerequisites: SQL Server with a single SQL instance, Credentials for VM access,
 .. figure:: https://s3.us-east-2.amazonaws.com/s3.nutanixtechsummit.com/hycu/images/image33.png
 
 	
-13. Notice that HYCU will offer restore to particular point in time for Databases which are configured in full recovery mode.
+13. Notice that HYCU will offer Restore capabilities to a particular point in time for Databases which are configured in full recovery mode.
 	
 
 Conclusions
